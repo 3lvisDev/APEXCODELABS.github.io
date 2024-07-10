@@ -6,14 +6,11 @@
     <title>Elvis Da Silva - Analista de Sistemas</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-
         :root {
             --bg-color: #0a192f;
             --text-color: #e6f1ff;
             --accent-color: #64ffda;
             --secondary-color: #112240;
-            --hover-color: #48c9b0;
         }
 
         * {
@@ -23,7 +20,7 @@
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Arial', sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color);
             line-height: 1.6;
@@ -37,45 +34,41 @@
         }
 
         header {
-            background-color: rgba(10, 25, 47, 0.95);
-            padding: 1rem 0;
+            background-color: var(--bg-color);
+            padding: 20px 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--accent-color);
         }
 
         nav ul {
+            list-style-type: none;
             display: flex;
-            list-style: none;
+            justify-content: center;
         }
 
         nav ul li {
-            margin-left: 2rem;
+            margin: 0 15px;
         }
 
         nav ul li a {
             color: var(--text-color);
             text-decoration: none;
-            font-weight: 400;
-            transition: color 0.3s ease;
+            font-size: 18px;
         }
 
-        nav ul li a:hover, nav ul li a.active {
+        nav ul li a:hover {
             color: var(--accent-color);
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        h1, h2 {
+            color: var(--accent-color);
+            margin-bottom: 20px;
         }
 
         .hero {
@@ -84,234 +77,115 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            background: linear-gradient(rgba(10, 25, 47, 0.8), rgba(10, 25, 47, 0.8)), url('https://source.unsplash.com/random/1920x1080?technology') no-repeat center center/cover;
-            padding: 0 20px;
+            background-color: var(--secondary-color);
         }
 
         .hero-content h1 {
             font-size: 3rem;
-            margin-bottom: 1rem;
-            animation: fadeInUp 1s ease;
+            margin-bottom: 20px;
         }
 
         .hero-content p {
             font-size: 1.2rem;
-            margin-bottom: 2rem;
-            animation: fadeInUp 1s ease 0.5s both;
+            margin-bottom: 30px;
         }
 
         .btn {
             display: inline-block;
             background-color: var(--accent-color);
             color: var(--bg-color);
-            padding: 0.8rem 1.5rem;
-            border-radius: 5px;
+            padding: 10px 20px;
             text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            animation: fadeInUp 1s ease 1s both;
+            border-radius: 5px;
+            font-weight: bold;
         }
 
-        .btn:hover {
-            background-color: var(--hover-color);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        section {
-            padding: 5rem 0;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 3rem;
-            color: var(--accent-color);
-        }
-
-        .about-content {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 2rem;
-        }
-
-        .about-text {
-            flex: 1;
-        }
-
-        .about-image {
-            flex: 1;
-            text-align: center;
-        }
-
-        .about-image img {
-            max-width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .skills-container {
+        .about-content, .skills-container, .projects-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
         }
 
-        .skill-card {
+        .skill-card, .project-card {
             background-color: var(--secondary-color);
+            padding: 20px;
             border-radius: 10px;
-            padding: 1.5rem;
             text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .skill-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .skill-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+        .skill-icon, .project-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
             color: var(--accent-color);
-        }
-
-        .projects-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .project-card {
-            background-color: var(--secondary-color);
-            border-radius: 10px;
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .project-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .project-info {
-            padding: 1.5rem;
-        }
-
-        .project-title {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-            color: var(--accent-color);
-        }
-
-        .project-description {
-            font-size: 0.9rem;
-            color: #a8b2d1;
         }
 
         .contact-form {
-            max-width: 600px;
+            max-width: 500px;
             margin: 0 auto;
         }
 
         .form-group {
-            margin-bottom: 1.5rem;
+            margin-bottom: 20px;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 0.5rem;
+            margin-bottom: 5px;
         }
 
-        .form-group input, .form-group textarea {
+        .form-group input,
+        .form-group textarea {
             width: 100%;
-            padding: 0.8rem;
+            padding: 10px;
             border: 1px solid var(--secondary-color);
             background-color: var(--bg-color);
             color: var(--text-color);
             border-radius: 5px;
-            transition: box-shadow 0.3s ease;
-        }
-
-        .form-group input:focus, .form-group textarea:focus {
-            outline: none;
-            box-shadow: 0 0 0 2px var(--accent-color);
         }
 
         footer {
             background-color: var(--secondary-color);
             text-align: center;
-            padding: 1.5rem 0;
-            margin-top: 4rem;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            padding: 20px 0;
+            margin-top: 40px;
         }
 
         @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-            }
-
             nav ul {
-                margin-top: 1rem;
+                flex-direction: column;
+                align-items: center;
             }
 
             nav ul li {
-                margin: 0 0.5rem;
-            }
-
-            .about-content {
-                flex-direction: column;
+                margin: 10px 0;
             }
 
             .hero-content h1 {
-                font-size: 2.5rem;
+                font-size: 2rem;
             }
 
             .hero-content p {
                 font-size: 1rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="container header-content">
-            <div class="logo">Elvis Da Silva</div>
-            <nav>
-                <ul>
-                    <li><a href="#home" class="active">Inicio</a></li>
-                    <li><a href="#about">Sobre Mí</a></li>
-                    <li><a href="#skills">Habilidades</a></li>
-                    <li><a href="#projects">Proyectos</a></li>
-                    <li><a href="#contact">Contacto</a></li>
-                </ul>
-            </nav>
-        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#about">Sobre Mí</a></li>
+                <li><a href="#skills">Habilidades</a></li>
+                <li><a href="#projects">Proyectos</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+        </nav>
     </header>
 
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Hola, soy <span style="color: var(--accent-color);">Elvis Da Silva</span></h1>
+            <h1>Elvis Da Silva</h1>
             <p>Analista de Sistemas</p>
             <a href="#contact" class="btn">Contáctame</a>
         </div>
@@ -319,22 +193,16 @@
 
     <section id="about">
         <div class="container">
-            <h2 class="section-title">Sobre Mí</h2>
+            <h2>Sobre Mí</h2>
             <div class="about-content">
-                <div class="about-text">
-                    <p>Como Analista de Sistemas, me apasiona diseñar y optimizar soluciones tecnológicas para mejorar procesos empresariales. Mi experiencia abarca desde el análisis de requisitos hasta la implementación de sistemas, siempre buscando la eficiencia y la innovación.</p>
-                    <p>Me especializo en traducir las necesidades del negocio en soluciones técnicas efectivas, colaborando estrechamente con equipos multidisciplinarios para asegurar el éxito de los proyectos. Fuera del ámbito profesional, disfruto de los videojuegos y salir con amigos, actividades que nutren mi creatividad y perspectiva en la resolución de problemas.</p>
-                </div>
-                <div class="about-image">
-                    <img src="https://source.unsplash.com/random/400x400?tech" alt="Elvis Da Silva">
-                </div>
+                <p>Como Analista de Sistemas, me apasiona diseñar y optimizar soluciones tecnológicas para mejorar procesos empresariales. Mi experiencia abarca desde el análisis de requisitos hasta la implementación de sistemas, siempre buscando la eficiencia y la innovación.</p>
             </div>
         </div>
     </section>
 
     <section id="skills">
         <div class="container">
-            <h2 class="section-title">Mis Habilidades</h2>
+            <h2>Mis Habilidades</h2>
             <div class="skills-container">
                 <div class="skill-card">
                     <i class="skill-icon fas fa-project-diagram"></i>
@@ -366,28 +234,22 @@
 
     <section id="projects">
         <div class="container">
-            <h2 class="section-title">Mis Proyectos</h2>
+            <h2>Mis Proyectos</h2>
             <div class="projects-container">
                 <div class="project-card">
-                    <img src="https://source.unsplash.com/random/600x400?communication" alt="Proyecto 1" class="project-image">
-                    <div class="project-info">
-                        <h3 class="project-title">Sistema de Llamadas en Tiempo Real</h3>
-                        <p class="project-description">Diseño e implementación de una plataforma de telecomunicación entre equipos, mejorando la eficiencia de la comunicación interna.</p>
-                    </div>
+                    <i class="project-icon fas fa-phone-alt"></i>
+                    <h3>Sistema de Llamadas en Tiempo Real</h3>
+                    <p>Plataforma de telecomunicación entre equipos para mejorar la comunicación interna.</p>
                 </div>
                 <div class="project-card">
-                    <img src="https://source.unsplash.com/random/600x400?management" alt="Proyecto 2" class="project-image">
-                    <div class="project-info">
-                        <h3 class="project-title">Sistema de Gestión de Tareas</h3>
-                        <p class="project-description">Desarrollo de una aplicación para la gestión de tareas y proyectos, con funcionalidades de colaboración en tiempo real y análisis de productividad.</p>
-                    </div>
+                    <i class="project-icon fas fa-tasks"></i>
+                    <h3>Sistema de Gestión de Tareas</h3>
+                    <p>Aplicación para gestionar tareas y proyectos con colaboración en tiempo real.</p>
                 </div>
                 <div class="project-card">
-                    <img src="https://source.unsplash.com/random/600x400?analytics" alt="Proyecto 3" class="project-image">
-                    <div class="project-info">
-                        <h3 class="project-title">Dashboard Analítico Empresarial</h3>
-                        <p class="project-description">Creación de un panel de control para visualizar y analizar datos de negocio en tiempo real, facilitando la toma de decisiones estratégicas.</p>
-                    </div>
+                    <i class="project-icon fas fa-chart-bar"></i>
+                    <h3>Dashboard Analítico Empresarial</h3>
+                    <p>Panel de control para visualizar y analizar datos de negocio en tiempo real.</p>
                 </div>
             </div>
         </div>
@@ -395,8 +257,29 @@
 
     <section id="contact">
         <div class="container">
-            <h2 class="section-title">Contáctame</h2>
+            <h2>Contáctame</h2>
             <form class="contact-form">
                 <div class="form-group">
                     <label for="name">Nombre</label>
                     <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensaje</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="btn">Enviar Mensaje</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Elvis Da Silva. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
