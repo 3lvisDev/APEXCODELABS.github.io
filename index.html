@@ -104,17 +104,46 @@
 }
 
 .image-wrapper {
-  width: 115px; /* Ancho fijo */
-  height: 173px; /* Alto fijo */
+  width: 250px; /* Ajustar el ancho para que se asemeje más a la imagen original */
+  height: 400px; /* Altura adecuada para que las imágenes sean verticales */
   overflow: hidden;
-  border-radius: 10px; /* Bordes redondeados para un diseño más estético */
+  border-radius: 12px; /* Bordes redondeados */
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Sombra ligera */
 }
 
 .image-wrapper img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Asegura que la imagen se recorte bien sin deformarse */
+  object-fit: cover; /* Recorta la imagen sin distorsionarla */
+}
+
+.site-categories-item3-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.site-categories-item3-info h2 {
+  font-size: 22px;
+  font-weight: bold;
+  color: white;
+}
+
+.site-categories-item3-info p {
+  font-size: 14px;
+  color: #ccc;
+}
+
+.btn-quote {
+  background-color: #e30000;
+  color: white;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
 }
 
   </style>
