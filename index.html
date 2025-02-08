@@ -97,16 +97,26 @@
 </section>
 <!-- Aquí la configuración del site-categories -->
 <style>
-	.image-wrapper {
-	  width: 115px;       /* Ancho deseado */
-	  height: 173px;      /* Altura deseada */
-	  overflow: hidden;
-	}
-	.image-wrapper img {
-	  width: 100%;
-	  height: 100%;
-	  object-fit: cover;  /* Recorta la imagen para llenar el contenedor */
-	}
+	.image-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem; /* Espaciado entre imágenes */
+}
+
+.image-wrapper {
+  width: 115px; /* Ancho fijo */
+  height: 173px; /* Alto fijo */
+  overflow: hidden;
+  border-radius: 10px; /* Bordes redondeados para un diseño más estético */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Sombra ligera */
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Asegura que la imagen se recorte bien sin deformarse */
+}
+
   </style>
 <section class="categories">
 	<div class="site-categories">
