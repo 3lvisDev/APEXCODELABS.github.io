@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elvis Da Silva - Analista de Sistemas</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" defer>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-color: #0a192f;
@@ -12,6 +13,7 @@
             --accent-color: #64ffda;
             --secondary-color: #112240;
             --error-color: #ff4d4d;
+            --font-family: 'Roboto', sans-serif;
         }
 
         * {
@@ -21,7 +23,7 @@
         }
 
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: var(--font-family);
             background-color: var(--bg-color);
             color: var(--text-color);
             line-height: 1.6;
@@ -86,6 +88,26 @@
             justify-content: center;
             text-align: center;
             background-color: var(--secondary-color);
+            background-image: url('path/to/your/background-image.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(10, 25, 47, 0.85);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
         }
 
         .hero-content h1 {
@@ -271,7 +293,7 @@
         <div class="container">
             <h2>Sobre Mí</h2>
             <div class="about-content">
-                <img src="https://avatars.githubusercontent.com/u/3lvisDev" alt="Elvis Da Silva">
+                <img src="https://avatars.githubusercontent.com/u/129239900?s=400&u=92dcd220bf7a8ed99aac915071908290b8f3449f&v=4" alt="Elvis Da Silva">
                 <p>Como Analista de Sistemas, me apasiona diseñar y optimizar soluciones tecnológicas para mejorar procesos empresariales. Mi experiencia abarca desde el análisis de requisitos hasta la implementación de sistemas, siempre buscando la eficiencia y la innovación.</p>
             </div>
         </div>
@@ -457,22 +479,4 @@
             const emailError = document.getElementById('email-error');
             const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailPattern.test(emailInput.value.trim())) {
-                emailError.textContent = 'Por favor, ingrese un email válido.';
-                hasError = true;
-            } else {
-                emailError.textContent = '';
-            }
-
-            // Validate message
-            const messageInput = document.getElementById('message');
-            const messageError = document.getElementById('message-error');
-            if (messageInput.value.trim() === '') {
-                messageError.textContent = 'Por favor, ingrese su mensaje.';
-                hasError = true;
-            } else {
-                messageError.textContent = '';
-            }
-
-            if (!hasError) {
-                // Submit the form
-                this
+                emailError.textContent =
