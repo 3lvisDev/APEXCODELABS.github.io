@@ -1,482 +1,194 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elvis Da Silva - Analista de Sistemas</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" defer>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-color: #0a192f;
-            --text-color: #e6f1ff;
-            --accent-color: #64ffda;
-            --secondary-color: #112240;
-            --error-color: #ff4d4d;
-            --font-family: 'Roboto', sans-serif;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: var(--font-family);
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-            scroll-behavior: smooth;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        header {
-            background-color: var(--bg-color);
-            padding: 20px 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            transition: background-color 0.3s;
-        }
-
-        header.scrolled {
-            background-color: var(--secondary-color);
-        }
-
-        nav ul {
-            list-style-type: none;
-            display: flex;
-            justify-content: center;
-        }
-
-        nav ul li {
-            margin: 0 15px;
-        }
-
-        nav ul li a {
-            color: var(--text-color);
-            text-decoration: none;
-            font-size: 18px;
-            transition: color 0.3s;
-        }
-
-        nav ul li a:hover {
-            color: var(--accent-color);
-        }
-
-        section {
-            padding: 80px 0;
-        }
-
-        h1, h2 {
-            color: var(--accent-color);
-            margin-bottom: 20px;
-        }
-
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            background-color: var(--secondary-color);
-            background-image: url('path/to/your/background-image.jpg');
-            background-size: cover;
-            background-position: center;
-            position: relative;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(10, 25, 47, 0.85);
-            z-index: 1;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero-content h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
-
-        .hero-content p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: var(--accent-color);
-            color: var(--bg-color);
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        .btn:hover {
-            background-color: var(--text-color);
-            color: var(--bg-color);
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 30px;
-            align-items: center;
-        }
-
-        .about-content img {
-            border-radius: 50%;
-            max-width: 100%;
-            height: auto;
-            border: 4px solid var(--accent-color);
-            transition: transform 0.3s;
-        }
-
-        .about-content img:hover {
-            transform: scale(1.05);
-        }
-
-        .skills-container, .projects-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-
-        .skill-card, .project-card {
-            background-color: var(--secondary-color);
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            transition: transform 0.3s;
-        }
-
-        .skill-card:hover, .project-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .skill-icon, .project-icon {
-            font-size: 40px;
-            margin-bottom: 15px;
-            color: var(--accent-color);
-        }
-
-        .contact-form {
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid var(--secondary-color);
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            border-radius: 5px;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--accent-color);
-        }
-
-        .form-error {
-            color: var(--error-color);
-            font-size: 0.9rem;
-            margin-top: 5px;
-        }
-
-        footer {
-            background-color: var(--secondary-color);
-            text-align: center;
-            padding: 20px 0;
-            margin-top: 40px;
-        }
-
-        .back-to-top {
-            position: fixed;
-            bottom: 40px;
-            right: 40px;
-            background-color: var(--accent-color);
-            color: var(--bg-color);
-            padding: 10px;
-            border-radius: 50%;
-            font-size: 1.5rem;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .back-to-top:hover {
-            background-color: var(--text-color);
-            color: var(--bg-color);
-        }
-
-        @media (max-width: 768px) {
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            nav ul li {
-                margin: 10px 0;
-            }
-
-            .hero-content h1 {
-                font-size: 2rem;
-            }
-
-            .hero-content p {
-                font-size: 1rem;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-        }
-    </style>
-</head>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Arnés de Seguridad</title>
+		<meta name="keywords" content="Arnés de seguridad, Equipos de protección personal, Trabajos en alturas, Seguridad laboral, Protección laboral, Estándares de calidad y seguridad, Protección en el trabajo, Protección en altura, Prevención de accidentes laborales, Protección personal, Productos de seguridad, Comprar equipos de seguridad, Equipos de seguridad industrial, Equipo de protección para trabajos en altura, Arnés para trabajos en alturas, Equipamiento de seguridad laboral, Tienda de equipos de seguridad, Seguridad en el trabajo, Protección de trabajadores en alturas, Protección de caídas, Cuerdas de seguridad, Cascos de seguridad, Arneses de seguridad industrial, Protección de riesgos laborales.">
+		<meta name="description" content="Arnés de Seguridad es una empresa especializada en equipos de protección personal para trabajos en alturas. Ofrecemos productos de alta calidad y seguridad para garantizar la protección de nuestros clientes. Visítanos para obtener más información.">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+		<link rel="stylesheet" href="./css/main.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+		<link rel="shortcut icon" href="./img/logo arnés de seguridad.png">
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
+		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css"/>
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	</head>
 <body>
-    <header id="header">
-        <nav>
-            <ul>
-                <li><a href="#home">Inicio</a></li>
-                <li><a href="#about">Sobre Mí</a></li>
-                <li><a href="#skills">Habilidades</a></li>
-                <li><a href="#projects">Proyectos</a></li>
-                <li><a href="#contact">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Elvis Da Silva</h1>
-            <p>Analista de Sistemas</p>
-            <a href="#contact" class="btn">Contáctame</a>
-        </div>
-    </section>
-
-    <section id="about">
-        <div class="container">
-            <h2>Sobre Mí</h2>
-            <div class="about-content">
-                <img src="https://avatars.githubusercontent.com/u/129239900?s=400&u=92dcd220bf7a8ed99aac915071908290b8f3449f&v=4" alt="Elvis Da Silva">
-                <p>Como Analista de Sistemas, me apasiona diseñar y optimizar soluciones tecnológicas para mejorar procesos empresariales. Mi experiencia abarca desde el análisis de requisitos hasta la implementación de sistemas, siempre buscando la eficiencia y la innovación.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="skills">
-        <div class="container">
-            <h2>Mis Habilidades</h2>
-            <div class="skills-container">
-                <div class="skill-card">
-                    <i class="skill-icon fas fa-project-diagram" aria-hidden="true"></i>
-                    <h3>Análisis de Sistemas</h3>
-                </div>
-                <div class="skill-card">
-                    <i class="skill-icon fas fa-tasks" aria-hidden="true"></i>
-                    <h3>Gestión de Proyectos</h3>
-                </div>
-                <div class="skill-card">
-                    <i class="skill-icon fas fa-database" aria-hidden="true"></i>
-                    <h3>Diseño de BD</h3>
-                </div>
-                <div class="skill-card">
-                    <i class="skill-icon fab fa-python" aria-hidden="true"></i>
-                    <h3>Python</h3>
-                </div>
-                <div class="skill-card">
-                    <i class="skill-icon fas fa-code" aria-hidden="true"></i>
-                    <h3>SQL</h3>
-                </div>
-                <div class="skill-card">
-                    <i class="skill-icon fas fa-chart-line" aria-hidden="true"></i>
-                    <h3>Análisis de Datos</h3>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects">
-        <div class="container">
-            <h2>Proyectos Tecnológicos de Elvis Da Silva</h2>
-            <div class="projects-container">
-                <div class="project-card">
-                    <i class="project-icon fas fa-phone-alt"></i>
-                    <h3>Sistema de Recepción de Llamadas con Raspberry Pi y Flask</h3>
-                    <p>Un sistema de telecomunicación basado en IP utilizando una Raspberry Pi con botones físicos que envían señales HTTP a un servidor Flask, que luego notifica a un cliente para aceptar la llamada.</p>
-                    <p><strong>Componentes:</strong> Raspberry Pi con GPIO y Flask, Cliente con interfaz visual para aceptar llamadas, Servidor que recibe y distribuye solicitudes.</p>
-                </div>
-                <div class="project-card">
-                    <i class="project-icon fas fa-desktop"></i>
-                    <h3>Sistema de Monitoreo con Zabbix</h3>
-                    <p>Implementación de Zabbix para monitoreo de redes y servidores con configuraciones específicas para notificaciones y visualización en cuatro pantallas.</p>
-                    <p><strong>Tecnologías:</strong> Zabbix Server, Configuración de métricas y alertas personalizadas, Integración con otros sistemas de monitoreo.</p>
-                </div>
-                <div class="project-card">
-                    <i class="project-icon fas fa-mobile-alt"></i>
-                    <h3>Aplicación de Delivery con Flutter y MariaDB</h3>
-                    <p>Desarrollo de una app de delivery con seguimiento en tiempo real del motorizado y gestión de pedidos mediante una base de datos en MariaDB.</p>
-                    <p><strong>Características:</strong> Tres roles: Cliente, Administrador y Delivery, Seguimiento del motorizado en OpenStreetMap, Integración con un sistema de pagos.</p>
-                    <p><strong>Tecnologías:</strong> Flutter, MariaDB, OpenStreetMap.</p>
-                </div>
-                <div class="project-card">
-                    <i class="project-icon fas fa-lock"></i>
-                    <h3>Sistema de VPN con Voz Similar a Radmin VPN</h3>
-                    <p>Proyecto para crear una VPN con comunicación por voz integrada, ofreciendo una solución segura y fácil de usar.</p>
-                    <p><strong>Características:</strong> Implementación simple con SSL/TLS, Opción avanzada con interfaz gráfica, redirección de tráfico y comunicación por voz.</p>
-                    <p><strong>Tecnologías:</strong> Python, OpenVPN o WireGuard.</p>
-                </div>
-                <div class="project-card">
-                    <i class="project-icon fas fa-cloud"></i>
-                    <h3>Configuración de OwnCloud en Ubuntu</h3>
-                    <p>Instalación y configuración de OwnCloud en un servidor Ubuntu para gestión de archivos personales y profesionales.</p>
-                    <p><strong>Tecnologías:</strong> OwnCloud, Servidor Ubuntu, Configuración de acceso remoto mediante SSH y VNC.</p>
-                </div>
-                <div class="project-card">
-                    <i class="project-icon fas fa-shield-alt"></i>
-                    <h3>Sistema de Gestión de Seguridad para Securitas Chile</h3>
-                    <p>Desarrollo de una plataforma de gestión de seguridad con monitoreo remoto, control de accesos y automatización de procesos.</p>
-                    <p><strong>Tecnologías:</strong> Integración de sistemas de control de acceso, Automatización con scripts en Python y Bash, Monitoreo con Zabbix.</p>
-                </div>
-                <div class="project-card">
-                    <i class="project-icon fas fa-mouse-pointer"></i>
-                    <h3>Autoclicker con Interfaz Escalable y Elegante</h3>
-                    <p>Desarrollo de un autoclicker con una interfaz visual única y escalable.</p>
-                    <p><strong>Tecnologías:</strong> Python, Automatización con PyAutoGUI.</p>
-                </div>
-                <div class="project-card">
-                    <i class="project-icon fas fa-microchip"></i>
-                    <h3>Instalación de LineageOS en Raspberry Pi 4</h3>
-                    <p>Instalación y configuración de LineageOS 18.2 y 20.0 en una Raspberry Pi 4, con pruebas de compatibilidad y optimización.</p>
-                    <p><strong>Tecnologías:</strong> Raspberry Pi 4, LineageOS 18.2 y 20.0.</p>
-                </div>
-                <div class="project-card">
-                    <i class="project-icon fas fa-briefcase"></i>
-                    <h3>Aplicación para Contratar Servicios a Domicilio</h3>
-                    <p>Desarrollo de una aplicación para conectar clientes con empresas privadas que ofrecen servicios a domicilio.</p>
-                    <p><strong>Tecnologías:</strong> Flutter, Backend con Firebase o Django.</p>
-                </div>
-                <div class="project-card">
-                    <i class="project-icon fas fa-network-wired"></i>
-                    <h3>Configuración de pfSense en Modo Bridge</h3>
-                    <p>Implementación de pfSense en modo bridge para evitar bloqueos por exceso de solicitudes y mejorar el rendimiento de la red.</p>
-                    <p><strong>Tecnologías:</strong> pfSense, Redes y seguridad informática.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact">
-        <div class="container">
-            <h2>Contáctame</h2>
-            <form class="contact-form" novalidate>
-                <div class="form-group">
-                    <label for="name">Nombre</label>
-                    <input type="text" id="name" name="name" required aria-required="true">
-                    <div class="form-error" id="name-error"></div>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required aria-required="true">
-                    <div class="form-error" id="email-error"></div>
-                </div>
-                <div class="form-group">
-                    <label for="message">Mensaje</label>
-                    <textarea id="message" name="message" required aria-required="true"></textarea>
-                    <div class="form-error" id="message-error"></div>
-                </div>
-                <button type="submit" class="btn">Enviar Mensaje</button>
-            </form>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Elvis Da Silva. Todos los derechos reservados.</p>
-        </div>
-    </footer>
-
-    <div class="back-to-top" id="back-to-top" aria-label="Volver al inicio">
-        <i class="fas fa-chevron-up"></i>
+<!-- Aquí la configuración del header -->
+<header>
+	<nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="./index.html">ARNÉS DE SEGURIDAD</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+				<li class="nav-item">
+				<a class="nav-link active" aria-current="page" href="./index.html">INICIO</a>
+				</li>
+				<li class="nav-item">
+				<a class="nav-link" href="./html/contacto.html">CONTÁCTANOS</a>
+				</li>
+				<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+					SOBRE NOSOTROS
+				</a>
+				<ul class="dropdown-menu">
+					<li><a class="dropdown-item" href="./html/nuestrastiendas.html">TIENDAS</a></li>
+					<li><a class="dropdown-item" href="./html/sobrenosotros.html">NOSOTROS</a></li>
+					<li><hr class="dropdown-divider"></li>
+					<li><a class="dropdown-item" href="./html/misionyvision.html">MISIÓN Y VISÓN</a></li>
+				</ul>
+				</li>
+			</ul>
+			<form class="d-flex" role="search">
+				<input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+				<button class="btn btn-outline-success" type="submit">Buscar</button>
+			</form>
+			</div>
+		</div>
+		</nav>
+</header>
+<main>
+<!--Aqui la configuración de los banners-->
+<div id="carouselExampleIndicators" class="carousel slide">
+	<div class="carousel-indicators">
+		<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+		<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+		<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+	</div>
+	<div class="carousel-inner">
+		<div class="carousel-item active">
+		<img src="./img/Arnes de Seguridad Banner 1.webp" class="d-block w-100" alt="...">
+		</div>
+		<div class="carousel-item">
+		<img src="./img/Arnes de Seguridad Banner 2.webp" class="d-block w-100" alt="...">
+		</div>
+		<div class="carousel-item">
+		<img src="./img/Arnes de Seguridad Banner 3.webp" class="d-block w-100" alt="...">
+		</div>
+	</div>
+	<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+		<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		<span class="visually-hidden">Previous</span>
+	</button>
+	<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+		<span class="carousel-control-next-icon" aria-hidden="true"></span>
+		<span class="visually-hidden">Next</span>
+	</button>
+	</div>
+<!--Aquí la configuración del site-description-->
+<section class="descripcion" 
+	data-aos="fade-up"
+	data-aos-anchor-placement="top-center">
+    <div class="site-description">
+        <h1>SOMOS ARNÉS DE SEGURIDAD</h1>
+        <h2>CALIDAD A TU ALTURA</h2>
+        <p>Especialistas en equipos de protección personal para trabajos en alturas. Estamos aquí para garantizar la seguridad y protección de todos nuestros clientes ofreciendo productos con los mayores estándares de calidad y seguridad.</p>
+        <button class="buy-now-button" onclick="window.location.href='./html/contacto.html'">COMPRAR AHORA</button>
+		<div class="logo-container">
+			<img src="./img/logo arnés de seguridad.png" alt="Logo pequeño Arnés de seguridad">
+		</div>
     </div>
-
-    <script>
-        // Change header background on scroll
-        window.addEventListener('scroll', () => {
-            const header = document.getElementById('header');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-
-            // Show back-to-top button
-            const backToTop = document.getElementById('back-to-top');
-            if (window.scrollY > 200) {
-                backToTop.style.display = 'flex';
-            } else {
-                backToTop.style.display = 'none';
-            }
-        });
-
-        // Smooth scroll to top
-        document.getElementById('back-to-top').addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-
-        // Form validation
-        document.querySelector('.contact-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            let hasError = false;
-
-            // Validate name
-            const nameInput = document.getElementById('name');
-            const nameError = document.getElementById('name-error');
-            if (nameInput.value.trim() === '') {
-                nameError.textContent = 'Por favor, ingrese su nombre.';
-                hasError = true;
-            } else {
-                nameError.textContent = '';
-            }
-
-            // Validate email
-            const emailInput = document.getElementById('email');
-            const emailError = document.getElementById('email-error');
-            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailPattern.test(emailInput.value.trim())) {
-                emailError.textContent =
+</section>
+<!--Aquí la configuración del site-categories-->
+<section class="categories">
+	<div class="site-categories">
+		<div class="site-categories-item1">
+			<h2 class="decorative-title">COMPRA POR CATEGORÍA</h2>
+		</div>
+		<div class="site-categories-item2">
+			<div class="image-container">
+				<div class="image-wrapper">
+					<img src="./img/Equipos de alturas multipropósito.webp" alt="equipos de alturas multipropósito">
+				</div>
+				<div class="image-wrapper">
+					<img src="./img/Equipos de alturas dieléctricos.webp" alt="equipos de alturas dieléctricos">
+				</div>
+				<div class="image-wrapper">
+					<img src="./img/Equipos de alturas accesorios.webp" alt="accesorios de alturas">
+				</div>
+			</div>
+		</div>
+		<div class="site-categories-item3" 
+		data-aos="fade-right">
+			<div class="site-categories-item3-info">
+			<div class="site-categories-item3-title1">
+				<h2> <a href="#">MULTIPROPOSITO</a> </h2>
+				<p>Nuestros equipos de seguridad para alturas multipropósito garantizan la protección de los trabajadores en cualquier proyecto con riesgos de altura. </p>
+			</div>
+			<div class="site-categories-item3-title2">
+				<h2> <a href="#">DIELÉCTRICOS</a> </h2>
+				<p>Para trabajos en altura eléctricos, protege a tus trabajadores con nuestros equipos de seguridad dieléctricos certificados. </p>
+			</div>
+			<div class="site-categories-item3-title3">
+				<h2> <a href="#">ACCESORIOS</a> </h2>
+				<p>Nuestros accesorios de seguridad en alturas son la solución perfecta para cualquier proyecto que involucre trabajos en altura.</p>
+			</div>
+			</div>
+			<div class="site-categories-item3-buttons">
+				<button class="buy-now-button" onclick="window.location.href='./html/contacto.html'">SOLICITA TU COTIZACIÓN</button>
+			</div>
+		</div>
+		</div>
+	</div>
+</section>
+</main>
+<!--Aquí la configuración del footer-->
+	<footer class="site-footer" role="contentinfo">
+		<div class="footer-container">
+			<div class="footer-row">
+				<div class="footer-col">
+					<h3>Nuestra empresa</h3>
+					<ul>
+						<li><a href="./html/contacto.html" title="¿Deseas que nos comuniquemos contigo?">Contácto</a></li>
+						<li><a href="./html/sobrenosotros.html" title="Conoce más sobre nosotros">Sobre nosotros</a></li>
+						<li><a href="./html/misionyvision.html" title="Conoce nuestra misión y visión">Misión y Visión</a></li>
+						<li><a href="./html/nuestrastiendas.html" title="Conoce la ubicación de nuestras tiendas">Nuestras Tiendas</a></li>
+						<li><a href="./html/blogs.html" title="Visita nuestros blogs sobre alturas">Blogs</a></li>
+					</ul>
+				</div>
+				<div class="footer-col">
+					<h3>Atención al cliente</h3>
+					<ul>
+						<li><a href="/html/privacidad.html" title="Lee acerca de nuestra privacidad y seguridad">Privacidad y seguridad</a></li>
+						<li><a href="/html/estatuto.html" title="Conoce el estatuto del consumidor">Estatuto del consumidor</a></li>
+						<li><a href="/html/devoluciones.html" title="Aprende sobre las políticas de devolución y cambio">Devoluciones y cambios</a></li>
+						<li><a href="/html/terminos.html" title="Lee nuestros términos y condiciones">Términos y condiciones</a></li>
+					</ul>
+				</div>
+				<div class="footer-col">
+					<h3>Síguenos</h3>
+					<ul class="social-icons">
+						<li><a href="https://www.facebook.com/profile.php?id=100091134347135&is_tour_completed=true" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a></li>
+						<li><a href="https://www.instagram.com/arnesdeseguridad/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a></li>
+					</ul>
+				</div>
+				<div class="footer-col">
+					<h3>Suscribirse</h3>
+					<p>¿Te apasionan las alturas? suscríbete para que no te pierdas de nuestras últimas novedades y ofertas especiales</p>
+					<form action="#">
+						<input type="email" placeholder="Ingresa tu correo electrónico">
+						<button type="submit">Enviar</button>
+					</form>
+				</div>
+			</div>
+			<div class="footer-row">
+				<div class="footer-col">
+					<p>&copy; Arnés de Seguridad - 2023 Todos los derechos reservados - Diseño Web Agrofarbef LTDA</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	<script>
+		AOS.init();
+	</script>
+	<script src="./js/main.js"></script>
+</body>
+</html>
