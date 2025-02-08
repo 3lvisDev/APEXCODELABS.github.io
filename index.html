@@ -158,7 +158,7 @@
             padding: 10px;
             border: 1px solid var(--secondary-color);
             background-color: var(--bg-color);
-            color: var(--text-color);
+            color: var (--text-color);
             border-radius: 5px;
         }
 
@@ -175,7 +175,7 @@
         }
 
         footer {
-            background-color: var(--secondary-color);
+            background-color: var (--secondary-color);
             text-align: center;
             padding: 20px 0;
             margin-top: 40px;
@@ -185,7 +185,7 @@
             position: fixed;
             bottom: 40px;
             right: 40px;
-            background-color: var(--accent-color);
+            background-color: var(--accent color);
             color: var(--bg-color);
             padding: 10px;
             border-radius: 50%;
@@ -286,27 +286,74 @@
 
     <section id="projects">
         <div class="container">
-            <h2>Mis Proyectos</h2>
+            <h2>Proyectos Tecnológicos de Elvis Da Silva</h2>
             <div class="projects-container">
                 <div class="project-card">
-                    <i class="project-icon fas fa-phone-alt" aria-hidden="true"></i>
-                    <h3>Sistema de Llamadas en Tiempo Real</h3>
-                    <p>Plataforma de telecomunicación entre equipos para mejorar la comunicación interna.</p>
+                    <i class="project-icon fas fa-phone-alt"></i>
+                    <h3>Sistema de Recepción de Llamadas con Raspberry Pi y Flask</h3>
+                    <p>Un sistema de telecomunicación basado en IP utilizando una Raspberry Pi con botones físicos que envían señales HTTP a un servidor Flask, que luego notifica a un cliente para aceptar la llamada.</p>
+                    <p><strong>Componentes:</strong> Raspberry Pi con GPIO y Flask, Cliente con interfaz visual para aceptar llamadas, Servidor que recibe y distribuye solicitudes.</p>
                 </div>
                 <div class="project-card">
-                    <i class="project-icon fas fa-tasks" aria-hidden="true"></i>
-                    <h3>Sistema de Gestión de Tareas</h3>
-                    <p>Aplicación para gestionar tareas y proyectos con colaboración en tiempo real.</p>
+                    <i class="project-icon fas fa-desktop"></i>
+                    <h3>Sistema de Monitoreo con Zabbix</h3>
+                    <p>Implementación de Zabbix para monitoreo de redes y servidores con configuraciones específicas para notificaciones y visualización en cuatro pantallas.</p>
+                    <p><strong>Tecnologías:</strong> Zabbix Server, Configuración de métricas y alertas personalizadas, Integración con otros sistemas de monitoreo.</p>
                 </div>
                 <div class="project-card">
-                    <i class="project-icon fas fa-chart-bar" aria-hidden="true"></i>
-                    <h3>Dashboard Analítico Empresarial</h3>
-                    <p>Panel de control para visualizar y analizar datos de negocio en tiempo real.</p>
+                    <i class="project-icon fas fa-mobile-alt"></i>
+                    <h3>Aplicación de Delivery con Flutter y MariaDB</h3>
+                    <p>Desarrollo de una app de delivery con seguimiento en tiempo real del motorizado y gestión de pedidos mediante una base de datos en MariaDB.</p>
+                    <p><strong>Características:</strong> Tres roles: Cliente, Administrador y Delivery, Seguimiento del motorizado en OpenStreetMap, Integración con un sistema de pagos.</p>
+                    <p><strong>Tecnologías:</strong> Flutter, MariaDB, OpenStreetMap.</p>
+                </div>
+                <div class="project-card">
+                    <i class="project-icon fas fa-lock"></i>
+                    <h3>Sistema de VPN con Voz Similar a Radmin VPN</h3>
+                    <p>Proyecto para crear una VPN con comunicación por voz integrada, ofreciendo una solución segura y fácil de usar.</p>
+                    <p><strong>Características:</strong> Implementación simple con SSL/TLS, Opción avanzada con interfaz gráfica, redirección de tráfico y comunicación por voz.</p>
+                    <p><strong>Tecnologías:</strong> Python, OpenVPN o WireGuard.</p>
+                </div>
+                <div class="project-card">
+                    <i class="project-icon fas fa-cloud"></i>
+                    <h3>Configuración de OwnCloud en Ubuntu</h3>
+                    <p>Instalación y configuración de OwnCloud en un servidor Ubuntu para gestión de archivos personales y profesionales.</p>
+                    <p><strong>Tecnologías:</strong> OwnCloud, Servidor Ubuntu, Configuración de acceso remoto mediante SSH y VNC.</p>
+                </div>
+                <div class="project-card">
+                    <i class="project-icon fas fa-shield-alt"></i>
+                    <h3>Sistema de Gestión de Seguridad para Securitas Chile</h3>
+                    <p>Desarrollo de una plataforma de gestión de seguridad con monitoreo remoto, control de accesos y automatización de procesos.</p>
+                    <p><strong>Tecnologías:</strong> Integración de sistemas de control de acceso, Automatización con scripts en Python y Bash, Monitoreo con Zabbix.</p>
+                </div>
+                <div class="project-card">
+                    <i class="project-icon fas fa-mouse-pointer"></i>
+                    <h3>Autoclicker con Interfaz Escalable y Elegante</h3>
+                    <p>Desarrollo de un autoclicker con una interfaz visual única y escalable.</p>
+                    <p><strong>Tecnologías:</strong> Python, Automatización con PyAutoGUI.</p>
+                </div>
+                <div class="project-card">
+                    <i class="project-icon fas fa-microchip"></i>
+                    <h3>Instalación de LineageOS en Raspberry Pi 4</h3>
+                    <p>Instalación y configuración de LineageOS 18.2 y 20.0 en una Raspberry Pi 4, con pruebas de compatibilidad y optimización.</p>
+                    <p><strong>Tecnologías:</strong> Raspberry Pi 4, LineageOS 18.2 y 20.0.</p>
+                </div>
+                <div class="project-card">
+                    <i class="project-icon fas fa-briefcase"></i>
+                    <h3>Aplicación para Contratar Servicios a Domicilio</h3>
+                    <p>Desarrollo de una aplicación para conectar clientes con empresas privadas que ofrecen servicios a domicilio.</p>
+                    <p><strong>Tecnologías:</strong> Flutter, Backend con Firebase o Django.</p>
+                </div>
+                <div class="project-card">
+                    <i class="project-icon fas fa-network-wired"></i>
+                    <h3>Configuración de pfSense en Modo Bridge</h3>
+                    <p>Implementación de pfSense en modo bridge para evitar bloqueos por exceso de solicitudes y mejorar el rendimiento de la red.</p>
+                    <p><strong>Tecnologías:</strong> pfSense, Redes y seguridad informática.</p>
                 </div>
             </div>
         </div>
     </section>
-
+    
     <section id="contact">
         <div class="container">
             <h2>Contáctame</h2>
@@ -352,11 +399,11 @@
             }
 
             // Show back-to-top button
-            const backToTop = document.getElementById('back-to-top');
+            const backTo-top = document.getElementById('back-to-top');
             if (window.scrollY > 200) {
-                backToTop.style.display = 'flex';
+                backTo-top.style.display = 'flex';
             } else {
-                backToTop.style.display = 'none';
+                back-to-top.style.display = 'none';
             }
         });
 
