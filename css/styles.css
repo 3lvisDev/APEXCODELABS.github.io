@@ -255,74 +255,74 @@ header {
 }
 
 
-/* Estilos footer móviles */
-@media screen and (max-width: 767px) {
+/* 📱 Estilos del footer para dispositivos móviles */
+@media screen and (max-width: 768px) {
+    
+    /* Ajuste general del contenedor del footer */
     .footer-container {
-        flex-wrap: wrap;
-    }
-
-    .footer-row {
         flex-direction: column;
-    }
-
-    .footer-col {
-        flex-basis: 100%;
-        max-width: 100%;
-    }
-
-    .social-icons a {
-        font-size: 16px;
-    }
-
-    .footer-col form input[type="email"],
-    .footer-col form button[type="submit"] {
-        width: 100%;
-    }
-}
-
-@media only screen and (max-width: 767px) {
-    .footer-container {
-        flex-wrap: wrap;
-    }
-
-    .footer-col {
-        flex-basis: 100%;
-        max-width: 100%;
-        margin-bottom: 40px;
         text-align: center;
+        padding: 20px;
     }
 
+    /* Secciones del footer en móviles */
+    .footer-col {
+        flex-basis: 100%;
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+
+    /* Espaciado en títulos de cada sección */
     .footer-col h3 {
         margin-top: 20px;
+        font-size: 18px; /* Tamaño más adecuado en móviles */
     }
 
+    /* Ajustes en los iconos de redes sociales */
     .social-icons {
         margin-top: 20px;
-        text-align: center;
+        display: flex;
+        justify-content: center;
+        gap: 10px; /* Espaciado uniforme */
     }
 
     .social-icons li {
         display: inline-block;
-        margin-right: 10px;
-    }
-
-    .social-icons li:last-of-type {
-        margin-right: 0;
     }
 
     .social-icons a {
-        width: 30px;
-        height: 30px;
-        line-height: 30px;
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+        font-size: 18px;
+    }
+
+    /* Ajuste del formulario de suscripción */
+    .footer-col form {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .footer-col form input[type="email"] {
+        width: 90%;
+        max-width: 350px;
+        padding: 12px;
+        border-radius: 6px;
         font-size: 16px;
     }
 
-    .footer-col form {
-        margin-top: 20px;
+    .footer-col form button {
+        width: 90%;
+        max-width: 350px;
+        padding: 12px;
+        font-size: 16px;
+        border-radius: 6px;
     }
-}
 
-@media screen and (max-width: 768px) {
+    /* Icono del menú en móviles */
     .menu-icon {
         display: block;
         position: fixed;
@@ -333,6 +333,7 @@ header {
         color: #333;
         cursor: pointer;
     }
+
 }
 
 /* Contact section */
