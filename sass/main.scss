@@ -827,26 +827,45 @@ p {
     text-align: flex-start;
 }
 
+// Estilos mejorados para los botones de categorías
 .site-categories-item3-buttons {
     display: flex;
     justify-content: center;
     align-items: flex-start;
+    gap: 15px; // Espaciado uniforme entre botones
 }
 
 .site-categories-item3-buttons button {
-    margin-left: 20px;
-    padding: 12px 20px;
+    padding: 12px 24px; // Más padding para mejor clicabilidad
     border: none;
-    border-radius: 4px;
+    border-radius: 6px; // Bordes más suaves y modernos
     font-size: 16px;
-    color: $color-fondo;
+    font-weight: bold;
+    color: white; // Asegurar visibilidad del texto
     background-color: #d91d00;
     cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
 }
 
+// Efecto hover con animaciones suaves
 .site-categories-item3-buttons button:hover {
     background-color: #a31601;
+    transform: scale(1.05); // Ligero crecimiento en hover
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); // Efecto de profundidad
 }
+
+// Ajuste para pantallas pequeñas
+@media only screen and (max-width: 768px) {
+    .site-categories-item3-buttons {
+        flex-direction: column; // Apila los botones en móviles
+        align-items: center;
+    }
+    .site-categories-item3-buttons button {
+        width: 100%; // Hacer los botones más grandes en móviles
+        text-align: center;
+    }
+}
+
 
 .site-categories-item3-title1 h2{
     font-family: 'Montserrat ExtraBold', sans-serif;
