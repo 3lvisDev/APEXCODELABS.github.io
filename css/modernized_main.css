@@ -1,0 +1,120 @@
+
+/* Importar Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+    --primary-color: #ff5733; /* Color principal llamativo */
+    --secondary-color: #222; /* Fondo oscuro para modo dark */
+    --text-color: #fff; /* Texto en modo oscuro */
+    --bg-light: #f4f4f4; /* Fondo claro */
+    --border-radius: 8px; /* Bordes redondeados */
+    --transition: 0.3s ease-in-out;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+}
+
+/* Restaurando breadcrumb original */
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+.breadcrumb ol {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.breadcrumb li {
+    font-size: 1.2rem;
+    margin-right: 1rem;
+    position: relative;
+}
+.breadcrumb li:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 0.5rem solid transparent;
+    border-bottom: 0.5rem solid transparent;
+    border-left: 0.5rem solid #DEDEDE;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -0.75rem;
+}
+.breadcrumb li:first-child:before {
+    display: none;
+}
+.breadcrumb li a {
+    color: #4a4a4a;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.breadcrumb li a:hover {
+    color: #e12e31;
+}
+
+/* Botones con modernización pero sin afectar funcionalidad */
+button, .btn {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+}
+button:hover, .btn:hover {
+    background-color: #e04b2f;
+}
+
+/* Contenedor más espacioso */
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Restaurando footer original */
+.site-footer {
+    background-color: #333;
+    color: #fff;
+    padding: 50px 0;
+}
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.footer-col h3 {
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+.footer-col ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+.footer-col ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    button {
+        width: 100%;
+    }
+}
