@@ -693,140 +693,222 @@ input[type="submit"]:hover {
     transform: scale(1.05);
 }
 
-    /* 📌 Estilos globales de texto */
-p {
-    margin-block: 1.5rem;
-    line-height: 1.6;
-    color: #333; /* Mejor contraste */
+    /* 🎠 Estilos para los banners */
+@media (max-width: 767px) {
+    .carousel-item img {
+        height: 75vh; /* Ajuste para que no sea tan grande en móviles */
+        object-fit: cover;
+        border-radius: 10px; /* Bordes más suaves */
+        transition: transform 0.3s ease;
+    }
+
+    /* Efecto hover en banners */
+    .carousel-item img:hover {
+        transform: scale(1.02); /* Pequeño zoom */
+    }
 }
 
-/* 📌 Alineación de textos centrados */
-.text--center {
-    text-align: center;
-    font-size: 16px;
+/* 🏗️ Estilos para `site-categories` */
+.site-categories {
+    width: 100%;
+    min-height: 750px;
+    background-color: #232323;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 10px; /* Mayor separación entre secciones */
+    padding: 20px;
 }
 
-/* 📌 Ajuste en campo de contraseña */
-.form__field__contraseña {
-    font-size: 14px;
-}
-
-/* 🏠 Estilos para logo en home */
-.logo-home {
+/* 📌 Item 1 */
+.site-categories-item1 {
+    background-color: #232323;
+    background-size: cover;
+    background-position: center;
+    grid-column: 1/8;
+    grid-row: 1/2;
     display: flex;
     align-items: center;
-    justify-content: space-between;
 }
 
-.logo-home span {
+/* 📌 Título decorativo */
+.decorative-title {
+    color: #ffffff;
+    text-align: center;
+    position: relative;
     display: inline-block;
-    font-weight: bold;
-    text-transform: uppercase;
-    text-decoration: none;
+    font-family: 'Montserrat Black', sans-serif;
+    font-size: 30px;
+    padding-left: 90px;
 }
 
-/* 🖼️ Estilos para `site-description` */
-.site-description {
-    background-color: #f5f5f5;
-    padding: 100px 30px;
-    border-radius: 12px;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+/* Línea decorativa antes del título */
+.decorative-title::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 80px;
+    height: 5px;
+    background-color: #d91d00;
+    transform: translateY(-50%);
+}
+
+/* 📌 Item 2 */
+.site-categories-item2 {
+    background-color: #232323;
+    background-size: cover;
+    background-position: center;
+    grid-column: 1/5;
+    grid-row: 2/7;
+}
+
+/* 📌 Contenedor de imágenes */
+.image-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+    margin-top: 10px;
+}
+
+/* 📌 Imagen dentro del contenedor */
+.image-wrapper {
+    width: calc(33.33% - 10px);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+/* Efecto hover en imágenes */
+.image-wrapper:hover {
+    transform: scale(1.05);
+}
+
+/* 📌 Imagen */
+.image-wrapper img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* 📌 Item 3 */
+.site-categories-item3 {
+    background-color: transparent;
+    grid-column: 5/8;
+    grid-row: 2/10;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+/* 📌 Información dentro de item3 */
+.site-categories-item3-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+/* 📌 Botones en item3 */
+.site-categories-item3-buttons {
+    display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
+    gap: 15px;
 }
 
-/* Títulos y subtítulos */
-.site-description h1 {
-    font-size: 42px;
-    color: #1b1b1b;
-    margin-bottom: 10px;
-    font-family: 'Montserrat Black', sans-serif;
-}
-
-.site-description h2 {
-    font-size: 22px;
-    margin-bottom: 20px;
-    color: #d91d00;
-    font-family: 'Montserrat SemiBold', sans-serif;
-}
-
-/* Párrafos */
-.site-description p {
-    font-size: 18px;
-    line-height: 1.6;
-    margin: 0 50px 40px;
-    color: #555;
-}
-
-/* 🎯 Botón de compra */
-.site-description .buy-now-button {
-    background-image: linear-gradient(to right, #e52d27 0%, #b31217 51%, #e52d27 100%);
-    margin: 10px;
-    padding: 15px 45px;
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 18px;
+/* 📌 Botones dentro de item3 */
+.site-categories-item3-buttons button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
     font-weight: bold;
     color: white;
-    background-size: 200% auto;
-    border-radius: 10px;
-    transition: background-position 0.5s ease, transform 0.2s ease, box-shadow 0.3s ease;
-    display: inline-block;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    background-color: #d91d00;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-/* Efecto hover en el botón */
-.site-description .buy-now-button:hover {
-    background-position: right center;
+/* Efecto hover en botones */
+.site-categories-item3-buttons button:hover {
+    background-color: #a31601;
     transform: scale(1.05);
-    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* 📌 Estilos para los títulos */
+.site-categories-item3-title1 h2,
+.site-categories-item3-title2 h2,
+.site-categories-item3-title3 h2 {
+    font-family: 'Montserrat ExtraBold', sans-serif;
+    margin-left: 50px;
+}
+
+/* 📌 Párrafos */
+.site-categories-item3-title1 p,
+.site-categories-item3-title2 p,
+.site-categories-item3-title3 p {
+    font-family: 'Montserrat Light', sans-serif;
+    font-size: 16px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 10px;
+}
+
+/* 📌 Links en títulos */
+.site-categories-item3-title1 h2 a,
+.site-categories-item3-title2 h2 a,
+.site-categories-item3-title3 h2 a {
     text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
 }
 
-/* 📌 Contenedor del logo en `site-description` */
-.logo-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 40px;
+/* Efecto hover en títulos */
+.site-categories-item3-title1:hover h2,
+.site-categories-item3-title2:hover h2,
+.site-categories-item3-title3:hover h2 {
+    color: #e0e0e0;
 }
 
-/* Logo en `site-description` */
-.logo-container img {
-    height: 40px;
-    margin-right: 10px;
-}
-
-/* 📱 Estilos para móviles */
+/* 📱 Responsividad */
 @media screen and (max-width: 768px) {
-    .site-description {
-        padding: 70px 20px;
+    .site-categories {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        padding: 15px;
     }
 
-    .site-description h1 {
-        font-size: 32px;
+    .decorative-title {
+        font-size: 24px;
+        padding-left: 50px;
     }
 
-    .site-description h2 {
-        font-size: 18px;
-        margin-bottom: 10px;
+    .decorative-title::before {
+        width: 40px;
     }
 
-    .site-description p {
-        font-size: 16px;
-        margin: 0 20px 20px;
+    .image-container {
+        flex-direction: column;
+        align-items: center;
     }
 
-    .logo-container {
-        margin-top: 20px;
+    .image-wrapper {
+        width: 90%;
     }
 
-    .logo-container img {
-        height: 30px;
-        margin-right: 5px;
+    .site-categories-item3-buttons {
+        flex-direction: column;
+    }
+
+    .site-categories-item3-buttons button {
+        width: 100%;
+        text-align: center;
     }
 }
 
