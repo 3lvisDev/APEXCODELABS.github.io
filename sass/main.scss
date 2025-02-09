@@ -633,20 +633,32 @@ p {
     margin-right: 50px;
 }
 
+// Botón de compra modernizado
 .site-description .buy-now-button {
-
-        background-image: linear-gradient(to right, #e52d27 0%, #b31217  51%, #e52d27  100%);
-        margin: 10px;
-        padding: 15px 45px;
-        text-align: center;
-        text-transform: uppercase;
-        transition: 0.5s;
-        background-size: 200% auto;
-        color: $color-fondo;            
-        box-shadow: 0 0 20px #eee;
-        border-radius: 10px;
-        display: block;
+    background-image: linear-gradient(to right, #e52d27 0%, #b31217 51%, #e52d27 100%);
+    margin: 10px auto; // Centrado automático
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 18px; // Tamaño de fuente más equilibrado
+    font-weight: bold;
+    color: white; // Asegurar visibilidad del texto
+    border: none;
+    border-radius: 12px; // Bordes más suaves
+    cursor: pointer;
+    transition: background-position 0.5s ease, transform 0.2s ease;
+    background-size: 200% auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); // Sombra más sutil para mejor integración
+    display: inline-block; // Evita que se expanda innecesariamente
 }
+
+// Efecto hover mejorado
+.site-description .buy-now-button:hover {
+    background-position: right center; // Animación más fluida
+    transform: scale(1.05); // Ligero crecimiento al pasar el mouse
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.2); // Resalta el botón con más profundidad
+}
+
 
 .site-description .buy-now-button:hover {
     background-position: right center; /* change the direction of the change here */
