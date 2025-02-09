@@ -660,11 +660,15 @@ p {
 }
 
 
+// Efecto hover mejorado para el botón de compra
 .site-description .buy-now-button:hover {
-    background-position: right center; /* change the direction of the change here */
-    color: $color-fondo;
+    background-position: right center; // Animación más fluida en el degradado
+    color: white; // Asegurar visibilidad del texto al hacer hover
     text-decoration: none;
+    transform: scale(1.05); // Ligero crecimiento para resaltar el botón
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.2); // Sombra mejorada para efecto tridimensional
 }
+
 /* Estilos para el contenedor del logo site-description*/
 .logo-container {
     display: flex;
