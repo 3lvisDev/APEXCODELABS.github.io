@@ -983,73 +983,88 @@ p {
     margin-bottom: 0px;
     }
     
-    .site-categories-item3-buttons {
-    display: block;
+    // Ajustes mejorados para los botones de categorías
+.site-categories-item3-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; // Permite que los botones se adapten mejor en pantallas pequeñas
+    gap: 10px; // Espaciado uniforme entre botones
     text-align: center;
-    }
-    
-    .site-categories-item3-buttons button {
+}
+
+.site-categories-item3-buttons button {
     margin-left: 0;
-    }
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px; // Bordes más suaves
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #d91d00;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
 }
 
-/*estilos del botón comprar del index*/
+// Efecto hover dinámico
+.site-categories-item3-buttons button:hover {
+    background-color: #a31601;
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+}
+
+// Botón de compra optimizado
 .buy-now-button {
-    font-family: 'Montserrat semibold', sans-serif;
-    background-color: #333; /* Color de fondo */
-    border: none; /* Elimina el borde */
-    color: $color-fondo; /* Color del texto */
-    padding: 15px 32px; /* Tamaño del padding */
-    text-align: center; /* Alineación del texto */
-    text-decoration: none; /* Elimina la decoración de texto */
-    display: inline-block; /* Hace que el botón sea un bloque en línea */
-    font-size: 16px; /* Tamaño de fuente */
-    margin: 0px 0 0 0; /* Margen superior */
-    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    font-family: 'Montserrat SemiBold', sans-serif;
+    background-color: #333;
+    border: none;
+    color: white; // Asegurar visibilidad
+    padding: 15px 32px;
+    text-align: center;
+    text-transform: uppercase;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
 }
 
-/* Estilos para la sección Mision y Vision */
+// Efecto hover en el botón de compra
+.buy-now-button:hover {
+    background-color: #555;
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+// Ajustes en la sección Misión y Visión
 .mision-vision {
-    padding: 100px;
-    margin: 50px 0;
+    padding: 80px 20px; // Ajuste de padding
+    margin: 50px auto;
     text-align: center;
-    margin-left: 50px;
-    margin-right: 50px;
+    max-width: 1200px; // Evita que se expanda demasiado
 }
 
 .mision-vision .row {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-}
-.mision {
-    margin-bottom: 50px;
+    gap: 20px; // Espacio uniforme entre elementos
 }
 
-
-/* Estilos para responsive misión y visión*/
+// Ajuste responsivo
 @media screen and (max-width: 768px) {
     .mision-vision {
-        padding: 60px;
-        margin-top: 30px;
+        padding: 50px 15px;
     }
     .mision-vision .row {
         flex-direction: column;
         align-items: center;
-        margin-top: 10px;
-        margin-bottom: -50px;
-        margin-left: -30px;
-        margin-right: -30px;
-    }
-    
-    .mision, .vision {
-        width: 100%;
-        margin-bottom: 30px;
-    }
-    .mision-vision p{
-        font-size: 16px;
     }
 }
+
 
 /* Estilos para la sección "about-us" */
 .about-us {
