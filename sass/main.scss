@@ -184,10 +184,49 @@ body {
         font-size: 16px;
     }
 
-    .footer-col form input[type="email"],
-    .footer-col form button[type="submit"] {
-        width: 100%;
-    }
+    // Ajuste para que el input y botón sean más atractivos y responsivos
+.footer-col form input[type="email"],
+.footer-col form button[type="submit"] {
+    width: 100%;
+    max-width: 400px; // Evita que sean demasiado anchos en pantallas grandes
+    display: block;
+    margin: 10px auto; // Centra ambos elementos en el formulario
+}
+
+// Mejora en el input de email
+.footer-col form input[type="email"] {
+    border: 2px solid #ccc; // Un borde más definido
+    padding: 12px 15px; // Mayor padding para mejor accesibilidad
+    border-radius: 6px; // Bordes más suaves
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+// Efecto al hacer focus en el input
+.footer-col form input[type="email"]:focus {
+    border-color: #ff5733; // Cambia el color del borde al interactuar
+    outline: none;
+}
+
+// Botón de envío modernizado
+.footer-col form button[type="submit"] {
+    background-color: #ff5733;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+// Efecto hover en el botón
+.footer-col form button[type="submit"]:hover {
+    background-color: #e04b2f;
+    transform: scale(1.05);
+}
+
 }
 
 @media only screen and (max-width: 767px) {
