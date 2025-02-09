@@ -81,7 +81,8 @@
         /* Responsive adjustments */
         @media only screen and (max-width: 767px) {
             .breadcrumb {
-                margin-bottom: 1rem;
+        margin-bottom: 1rem;
+        padding-left: 10px; // Ajuste de espacio para móviles
             }
             .breadcrumb li {
                 font-size: 1rem;
@@ -96,12 +97,17 @@
             }
             .breadcrumb li:last-child a {
                 color: #4a4a4a;
+                font-weight: bold; // Se resalta el último elemento
             }
             .breadcrumb li:last-child:before {
                 border-left-color: transparent;
             }
             .breadcrumb li a {
                 font-size: 1.1rem;
+                transition: color 0.3s ease; // Suaviza el cambio de color
+            }
+            .breadcrumb li a:hover {
+                color: #ff5733; // Color destacado en hover
             }
             .carousel-item img {
                 height: 80vh;
