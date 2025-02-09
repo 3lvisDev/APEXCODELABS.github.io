@@ -436,18 +436,18 @@ header {
     }
 }
 
-/*animación del formulario*/
+/* ✨ Animación de aparición del formulario */
 .contact-form {
     max-width: 600px;
     margin: 0 auto;
-    animation: slide-up 0.5s ease;
-    animation-fill-mode: forwards;
+    animation: fade-slide-up 0.6s ease-out forwards;
     opacity: 0;
 }
 
-@keyframes slide-up {
+/* 🔄 Nueva animación más fluida */
+@keyframes fade-slide-up {
     from {
-        transform: translateY(50px);
+        transform: translateY(60px);
         opacity: 0;
     }
     to {
@@ -455,27 +455,34 @@ header {
         opacity: 1;
     }
 }
-/* Aquí los estilos del login*/
 
+/* 🎨 Estilos generales del login */
 :root {
     --baseColor: #606468;
+    --backgroundColor: #ffffff;
+    --textColor: var(--baseColor);
 }
 
-    /* helpers/align.css */
-
+/* 📌 Alineación del contenido */
 .alignbody {
     display: grid;
     place-items: center;
+    height: 100vh;
+    background-color: var(--backgroundColor);
 }
 
+/* 🏷️ Estilos de la caja de login */
 .usuarios {
     inline-size: 80%;
     margin-inline: auto;
     max-inline-size: 35rem;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-    /* helpers/hidden.css */
-
+/* 🛠️ Ocultar elementos accesibles */
 .hidden {
     border: 0;
     clip: rect(0 0 0 0);
@@ -487,8 +494,7 @@ header {
     width: 1px;
 }
 
-    /* helpers/icon.css */
-
+/* 🖍️ Estilos de iconos */
 :root {
     --iconFill: var(--baseColor);
 }
@@ -505,18 +511,17 @@ header {
     vertical-align: middle;
 }
 
-    /* layout/base.css */
-
+/* 📌 Estilos base */
 :root {
     --htmlFontSize: 100%;
-    --bodyBackgroundColor: #ffffff;
+    --bodyBackgroundColor: #f8f8f8;
     --bodyColor: var(--baseColor);
     --bodyFontSize: 0.875rem;
     --bodyFontWeight: 400;
     --bodyLineHeight: 1.5;
 }
 
-    * {
+* {
     box-sizing: inherit;
 }
 
@@ -524,11 +529,16 @@ html {
     box-sizing: border-box;
 }
 
+/* 🖥️ Estilos del body */
 body {
     line-height: var(--bodyLineHeight);
     margin: 0;
-    min-block-size: 90vh;
+    min-height: 100vh;
+    background-color: var(--bodyBackgroundColor);
+    color: var(--bodyColor);
+    font-size: var(--bodyFontSize);
 }
+
 
     /* modules/anchor.css */
 
