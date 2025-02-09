@@ -1044,107 +1044,88 @@ input[type="submit"]:hover {
     }
 }
 
-/* Estilos para site-categories en dispositivos móviles */
+/* 📌 Estilos mejorados para `site-categories` en dispositivos móviles */
 @media (max-width: 767px) {
     .site-categories {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto auto auto auto;
-    min-height: auto;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto auto auto;
+        min-height: auto;
+        padding: 15px;
     }
     
     .site-categories-item1 {
-    grid-column: 1;
-    grid-row: 1;
-    height: 80px;
-    padding: 10px;
+        grid-column: 1;
+        grid-row: 1;
+        height: 80px;
+        padding: 10px;
     }
     
     .decorative-title {
-    font-size: 20px;
-    padding-left: 52px;
+        font-size: 20px;
+        padding-left: 52px;
     }
     
     .decorative-title::before {
-    width: 34px;
-    }
-    
-    .site-categories-item2 {
-    grid-column: 1;
-    grid-row: 2;
-    padding: 0px;
+        width: 34px;
     }
     
     .image-container {
-    display: flex;
-    max-width: 80%;
-    padding: 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0px;
     }
     
     .image-wrapper {
-    width: 100%;
-    margin: auto;
-    text-align: center;
-    margin-bottom: 0px;
+        width: 90%;
+        text-align: center;
+        margin-bottom: 10px;
     }
     
     .image-wrapper img {
-    max-width: 100%;
-    height: auto;
-    padding: 5px;
-    }
-    
-    .site-categories-item3 {
-    grid-column: 1;
-    grid-row: 3;
-    padding: 20px;
-    }
-    
-    .site-categories-item3-info {
-    margin-bottom: 0px;
-    }
-    
-    .site-categories-item3-info h2 {
-    font-size: 20px;
-    margin-bottom: 10px;
-    }
-    
-    .site-categories-item3-info p {
-    font-size: 14px;
-    margin-bottom: 0px;
+        max-width: 100%;
+        height: auto;
+        padding: 5px;
     }
     
     .site-categories-item3-buttons {
-    display: block;
-    text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     
     .site-categories-item3-buttons button {
-    margin-left: 0;
+        width: 100%;
+        text-align: center;
     }
 }
 
-/*estilos del botón comprar del index*/
+/* 🎯 Estilos mejorados para el botón de compra */
 .buy-now-button {
-    font-family: 'Montserrat semibold', sans-serif;
-    background-color: #333; /* Color de fondo */
-    border: none; /* Elimina el borde */
-    color: white; /* Color del texto */
-    padding: 15px 32px; /* Tamaño del padding */
-    text-align: center; /* Alineación del texto */
-    text-decoration: none; /* Elimina la decoración de texto */
-    display: inline-block; /* Hace que el botón sea un bloque en línea */
-    font-size: 16px; /* Tamaño de fuente */
-    margin: 0px 0 0 0; /* Margen superior */
-    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    font-family: 'Montserrat Semibold', sans-serif;
+    background-color: #333;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
 }
 
-/* Estilos para la sección Mision y Vision */
+.buy-now-button:hover {
+    background-color: #555;
+    transform: scale(1.05);
+}
+
+/* 📌 Estilos para `Misión y Visión` */
 .mision-vision {
-    padding: 100px;
-    margin: 50px 0;
+    padding: 80px 20px;
+    margin: 40px auto;
     text-align: center;
-    margin-left: 50px;
-    margin-right: 50px;
+    max-width: 1200px;
 }
 
 .mision-vision .row {
@@ -1152,35 +1133,22 @@ input[type="submit"]:hover {
     flex-wrap: wrap;
     justify-content: space-between;
 }
+
 .mision {
     margin-bottom: 50px;
 }
 
-/* Estilos para responsive misión y visión*/
-
 @media screen and (max-width: 768px) {
     .mision-vision {
-        padding: 60px;
-        margin-top: 30px;
+        padding: 50px 15px;
     }
     .mision-vision .row {
         flex-direction: column;
         align-items: center;
-        margin-top: -50px;
-        margin-bottom: -50px;
-        margin-left: -30px;
-        margin-right: -30px;
-    }
-    
-    .mision, .vision {
-        width: 100%;
-        margin-bottom: 30px;
-    }
-    .mision-vision p{
-        font-size: 16px;
     }
 }
-/* Estilos para la sección "about-us" */
+
+/* 📌 Sección `About Us` */
 .about-us {
     padding: 20px;
 }
@@ -1194,11 +1162,11 @@ input[type="submit"]:hover {
 
 .about-us p {
     text-align: justify;
-    line-height: 1.4;
+    line-height: 1.6;
     margin-bottom: 20px;
 }
 
-/* Estilos para la sección "values" */
+/* 📌 Sección `Valores` */
 .values {
     padding: 20px;
 }
@@ -1225,6 +1193,8 @@ input[type="submit"]:hover {
     padding: 10px;
     background-color: #ffffff;
     margin-top: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .grid-values-item img {
@@ -1246,57 +1216,62 @@ input[type="submit"]:hover {
     margin-top: 10px;
 }
 
-.title {
-    font-family: 'Montserrat ExtraBold', sans-serif;
-}
 
-/* Media queries values */
-
+/* 📌 Media Queries para `grid-values` y `about-us` */
 @media screen and (max-width: 768px) {
     .grid-values {
         grid-template-columns: 1fr;
     }
-
+    
     .about-us {
         padding: 20px;
     }
-
+    
     .grid-values-item {
         height: auto;
         margin-bottom: 20px;
     }
 }
 
-/* animación about.us */
-
+/* ✨ Animación para `about-us` */
 .animation {
-    animation-name: example;
+    animation-name: fadeIn;
     animation-duration: 2s;
+    animation-timing-function: ease-in-out;
 }
 
-@keyframes example {
-    from {opacity: 0;}
-    to {opacity: 1;}
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
 }
 
-/* estilos nuestras tiendas */
-
+/* 📌 Estilos para `Nuestras Tiendas` */
 .nuestrastiendas {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .nuestrastiendas h1 {
-    font-size: 25px;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 .nuestrastiendas p {
     margin-bottom: 20px;
+    text-align: center;
+    font-size: 16px;
+    color: #555;
 }
 
 .nuestrastiendas-map {
     margin-bottom: 20px;
+    text-align: center;
 }
 
 .store-grid {
@@ -1306,20 +1281,41 @@ input[type="submit"]:hover {
 }
 
 .store-card {
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    padding: 20px
+    background-color: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Efecto hover en store-card */
+.store-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.25);
+}
+
+/* 📌 Estilos para enlaces */
 a {
     text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
 }
+
+a:hover {
+    color: #d91d00;
+}
+
+/* 📌 Página de Login */
 .login-page {
     width: 100%;
     height: 100vh;
-    display: inline-block;
     display: flex;
     align-items: center;
+    justify-content: center;
+    background-color: #f8f8f8;
 }
+
 .form-right i {
     font-size: 100px;
+    color: #333;
 }
