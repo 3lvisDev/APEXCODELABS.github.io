@@ -24,6 +24,8 @@ body {
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 h1, h2, h3, h4, .navbar-brand {
@@ -404,7 +406,26 @@ textarea.form-control-v2 {
     margin-right: 1rem;
 }
 
-/* Animations */
+/* Animations & Performance Optimization */
+[data-aos] {
+    pointer-events: none;
+    will-change: transform, opacity;
+}
+
+[data-aos].aos-animate {
+    pointer-events: auto;
+}
+
+/* Prevenir parpadeo inicial (FOUC) */
+html:not(.no-js) [data-aos] {
+    opacity: 0;
+    transition-property: transform, opacity;
+}
+
+html:not(.no-js) [data-aos].aos-animate {
+    opacity: 1;
+}
+
 @keyframes fadeInUp {
     from {
         opacity: 0;
